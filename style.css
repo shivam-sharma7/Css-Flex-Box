@@ -1,4 +1,6 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital@1&display=swap');
+
 *{
    
     box-sizing: border-box;
@@ -8,34 +10,58 @@
 
 body{
 
+    font-family: 'Red Hat Display', sans-serif;
+
 }
 
 .flex-container{
-     height: 400px;
+     width: 100%;
+     height: auto;
      display: flex;
      flex-direction: row;
-     justify-content: space-between;
-     align-items: center;
+     justify-content: center;
+     align-items: start;
+     /* flex-wrap: wrap; */
      background-color: rgb(158, 158, 158);
-
+     
 }
  
-.flex-container::after{
-    display: block;
-    content: "";
-    clear: both;
-}
+/* we can use shorhand properties for flex-grow, flex-shrink and flex-basis => [ flex: 1 0 0 ] */
 
 .items{
-    width: 100px;
+
+    flex-basis: 100px;
+    flex-grow: 1; 
     height: 100px;
     color: #fff;
-    text-align: center;
     background-color: blue;
     margin: 10px;
-    padding: 5px;
+
+   /* how to align text using flexbox */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
 }
+
+/* By using suedo selector we can set size of box but we can do also like above itme class ( flex-grow: 1; ) 
+
+.items:nth-child(1){
+    flex-grow: 1;
+}
+
+.items:nth-child(2){
+    flex-grow: 2;
+}
+
+.items:nth-child(3){
+    flex-grow: 1;
+}
+*/
+
+
+
+/* By using suedo selector we can design each div block
 
 .items:nth-child(1){
 
@@ -51,3 +77,4 @@ body{
 
     align-self: flex-end;
 }
+*/
